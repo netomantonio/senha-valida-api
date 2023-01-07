@@ -1,0 +1,18 @@
+type Query {
+    verify(password: String, rules: Rules ): Checked
+}
+
+type Checked {
+    verify: Boolean
+    noMatch: [String]
+}
+
+input Rules {
+    password: String
+    rules: [Rule]
+}
+
+input Rule {
+    rule: String
+    value: Int
+}
