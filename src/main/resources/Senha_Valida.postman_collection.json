@@ -1,0 +1,25 @@
+{
+	"info": {
+		"_postman_id": "ef288cda-984d-4e1e-8a77-1a69b817cf35",
+		"name": "Senha_Valida",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "verificarSenha",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\r\n    verify(password: \"Tee1$233@4\", rules: [\r\n        {rule: \"minSize\",value: 8},\r\n        {rule: \"minSpecialChars\",value: 2},\r\n        {rule: \"noRepeted\",value: 2},\r\n        {rule: \"minDigit\",value: 4}\r\n    ]) {\r\n        verify\r\n        noMatch\r\n    }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": "http://localhost:8080/graphql"
+			},
+			"response": []
+		}
+	]
+}
